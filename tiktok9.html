@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KAAXPLACE - Unduh TikTok Tanpa Watermark</title>
+  <style>
+    /* CSS TETAP SAMA PERSIS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: white;
+      line-height: 1.6;
+      padding: 20px;
+      min-height: 100vh;
+      transition: background 0.5s ease;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+      color: #64f0ff;
+      text-shadow: 0 0 8px rgba(100, 240, 255, 0.6);
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: #a9a9ff;
+      margin-bottom: 20px;
+    }
+
+    .download-box {
+      background: rgba(15, 15, 35, 0.7);
+      border-radius: 16px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(100, 240, 255, 0.2);
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    input[type="url"] {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #4a4a8a;
+      border-radius: 12px;
+      background: rgba(10, 10, 30, 0.5);
+      color: white;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    input::placeholder {
+      color: #7a7abf;
+    }
+
+    button {
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background: linear-gradient(to right, #00c9ff, #92fe9d);
+      color: #0b0b1d;
+      box-shadow: 0 4px 15px rgba(0, 201, 255, 0.4);
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 201, 255, 0.5);
+    }
+
+    button:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* === Fitur Utama: Profesional & Responsif === */
+    .features-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+      padding: 0 10px;
+    }
+
+    .feature-card {
+      background: rgba(10, 10, 30, 0.4);
+      border: 1px solid rgba(100, 240, 255, 0.15);
+      border-radius: 16px;
+      padding: 24px 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(4px);
+    }
+
+    .feature-card:hover {
+      border-color: rgba(100, 240, 255, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .feature-icon {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 16px;
+      color: #64f0ff;
+    }
+
+    .feature-icon svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .feature-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #e0e0ff;
+      line-height: 1.3;
+    }
+
+    .feature-desc {
+      font-size: 0.95rem;
+      color: #b0b0d0;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* Halaman Download */
+    .download-page {
+      display: none;
+      background: rgba(15, 15, 35, 0.7);
+      border-radius: 16px;
+      padding: 25px;
+      margin-top: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(100, 240, 255, 0.2);
+    }
+
+    .download-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .download-icon {
+      width: 40px;
+      height: 40px;
+      background: #64f0ff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0b0b1d;
+      font-weight: bold;
+    }
+
+    .download-title {
+      font-size: 1.3rem;
+      color: #64f0ff;
+    }
+
+    .download-info {
+      background: rgba(10, 10, 30, 0.5);
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .info-label {
+      color: #aaa;
+    }
+
+    .info-value {
+      font-weight: bold;
+    }
+
+    .download-options {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .download-option-btn {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      background: rgba(100, 240, 255, 0.1);
+      color: #64f0ff;
+      border: 1px solid rgba(100, 240, 255, 0.3);
+      text-align: center;
+    }
+
+    .download-option-btn:hover {
+      background: rgba(100, 240, 255, 0.2);
+    }
+
+    .download-option-btn.active {
+      background: rgba(100, 240, 255, 0.3);
+      border-color: #64f0ff;
+    }
+
+    .download-button {
+      width: 100%;
+      padding: 16px;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background: linear-gradient(to right, #ff6b6b, #ee5a24);
+      color: white;
+      box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+    }
+
+    .download-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 107, 107, 0.5);
+    }
+
+    .back-btn {
+      margin-top: 15px;
+      width: 100%;
+      padding: 10px;
+      background: transparent;
+      border: 1px solid #64f0ff;
+      color: #64f0ff;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .back-btn:hover {
+      background: rgba(100, 240, 255, 0.1);
+    }
+
+    /* Loading Animation */
+    .loading {
+      display: none;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid rgba(100, 240, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: #64f0ff;
+      animation: spin 1s ease-in-out infinite;
+      margin: 0 auto 15px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Status Messages */
+    .status-message {
+      padding: 12px;
+      border-radius: 8px;
+      margin: 15px 0;
+      text-align: center;
+      display: none;
+    }
+
+    .status-success {
+      background: rgba(46, 204, 113, 0.2);
+      border: 1px solid rgba(46, 204, 113, 0.5);
+      color: #2ecc71;
+    }
+
+    .status-error {
+      background: rgba(231, 76, 60, 0.2);
+      border: 1px solid rgba(231, 76, 60, 0.5);
+      color: #e74c3c;
+    }
+
+    /* Bagian Panduan Profesional */
+    .guide-section {
+      background: rgba(15, 15, 35, 0.7);
+      border-radius: 16px;
+      padding: 30px;
+      margin-top: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(100, 240, 255, 0.2);
+    }
+
+    .guide-title {
+      font-size: 1.5rem;
+      color: #64f0ff;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .guide-card {
+      background: #4a00e0;
+      background: linear-gradient(135deg, #4a00e0, #8e2de2);
+      padding: 25px;
+      border-radius: 16px;
+      margin-top: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .guide-step {
+      position: relative;
+      padding-left: 60px;
+      margin-bottom: 20px;
+      font-size: 1.05rem;
+    }
+
+    .step-number {
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 3rem;
+      font-weight: bold;
+      color: rgba(255, 255, 255, 0.3);
+      z-index: 1;
+    }
+
+    .step-title {
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: white;
+    }
+
+    .guide-text {
+      color: #e0e0ff;
+      line-height: 1.5;
+    }
+
+    .guide-footer {
+      margin-top: 25px;
+      font-size: 0.9rem;
+      color: #aaa;
+      text-align: center;
+    }
+
+    /* === Bagian Panduan Perangkat & FAQ === */
+    .device-guide-section {
+      background: rgba(15, 15, 35, 0.5);
+      border-radius: 16px;
+      padding: 30px;
+      margin-top: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(100, 240, 255, 0.2);
+    }
+
+    .section-title {
+      text-align: center;
+      color: #d870ff;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: "👇";
+      font-size: 1.5rem;
+      position: absolute;
+      right: -40px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .device-illustration {
+      text-align: center;
+      margin: 30px 0;
+      position: relative;
+    }
+
+    .device-illustration svg {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+    }
+
+    .device-illustration .android {
+      fill: #6dd400;
+    }
+
+    .device-illustration .apple {
+      fill: white;
+    }
+
+    .device-illustration .phone {
+      fill: #1a1a2e;
+      stroke: #64f0ff;
+      stroke-width: 2;
+    }
+
+    .device-illustration .hand {
+      fill: #e0e0ff;
+      stroke: #aaa;
+      stroke-width: 1;
+    }
+
+    .guide-card-device {
+      background: rgba(10, 10, 30, 0.5);
+      border: 1px solid rgba(100, 240, 255, 0.2);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .guide-card-device h2 {
+      color: #64f0ff;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .guide-card-device p {
+      color: #e0e0ff;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .faq-section {
+      margin-top: 30px;
+    }
+
+    .faq-title {
+      color: #64f0ff;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .faq-item {
+      background: rgba(10, 10, 30, 0.4);
+      border: 1px solid rgba(100, 240, 255, 0.2);
+      border-radius: 12px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+
+    .faq-toggle {
+      width: 100%;
+      text-align: left;
+      padding: 15px 20px;
+      background: transparent;
+      border: none;
+      color: #e0e0ff;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.2s;
+    }
+
+    .faq-toggle:hover {
+      background: rgba(100, 240, 255, 0.1);
+    }
+
+    .faq-toggle span:last-child {
+      font-size: 1.2rem;
+    }
+
+    .faq-content {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      background: rgba(15, 15, 35, 0.3);
+    }
+
+    .faq-content p {
+      color: #aaa;
+      padding: 15px 0;
+      line-height: 1.6;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #888;
+      font-size: 0.9rem;
+    }
+
+    .disclaimer {
+      font-size: 0.85rem;
+      color: #aaa;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 15px;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      .guide-step {
+        padding-left: 50px;
+      }
+      .step-number {
+        font-size: 2.5rem;
+      }
+      .features-section {
+        grid-template-columns: 1fr;
+      }
+      .section-title::after {
+        display: none;
+      }
+      .device-illustration svg {
+        max-width: 250px;
+      }
+      .download-options {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>KAAXPLACE</h1>
+      <p class="subtitle">Unduh Video TikTok Tanpa Watermark • HD • Cepat • Gratis</p>
+    </header>
+
+    <div class="download-box">
+      <h2 style="margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#64f0ff" viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+        </svg>
+        Download Video TikTok
+      </h2>
+
+      <div class="input-group">
+        <input type="url" id="tiktokUrl" placeholder="Tempel link TikTok di sini" />
+        <small style="color: #aaa; margin-top: 8px; display: block;">💡 Salin link dari aplikasi TikTok, lalu tempel di atas</small>
+      </div>
+
+      <button id="processBtn" onclick="processLink()">📥 Download Video Sekarang</button>
+      
+      <div id="loading" class="loading">
+        <div class="spinner"></div>
+        <p>Memproses video TikTok...</p>
+      </div>
+      
+      <div id="statusMessage" class="status-message"></div>
+    </div>
+
+    <div class="features-section">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"></path>
+            <path d="M12 6v6l4 2"></path>
+          </svg>
+        </div>
+        <h3 class="feature-title">Akses Tanpa Batas</h3>
+        <p class="feature-desc">Gunakan layanan kami kapan saja, di mana saja — tanpa batasan harian, kuota, atau pemblokiran. 100% gratis selamanya.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17.5 15.5h0a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414h0a1 1 0 0 1-1.414 0L17.5 17l-1.586 1.586a1 1 0 0 1-1.414 0h0a1 1 0 0 1 0-1.414L16.086 15.5"></path>
+            <path d="M3 21h18"></path>
+            <path d="M9 10a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-4z"></path>
+            <path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path>
+          </svg>
+        </div>
+        <h3 class="feature-title">Tanpa Watermark</h3>
+        <p class="feature-desc">Video diunduh dalam format bersih — tanpa logo TikTok, nama pengguna, atau tanda air lainnya. Siap untuk digunakan di konten Anda.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20V4"></path>
+            <path d="M6 20h12"></path>
+            <path d="M6 12h12"></path>
+            <path d="M6 8h12"></path>
+            <path d="M6 16h12"></path>
+          </svg>
+        </div>
+        <h3 class="feature-title">MP4 & MP3 HD</h3>
+        <p class="feature-desc">Unduh dalam format video MP4 berkualitas tinggi atau ekstrak audio MP3 jernih — sempurna untuk konten kreator, editor, dan koleksi pribadi.</p>
+      </div>
+    </div>
+
+    <div id="downloadPage" class="download-page">
+      <div class="download-header">
+        <div class="download-icon">⬇️</div>
+        <div class="download-title">Siap Untuk Diunduh</div>
+      </div>
+
+      <div class="download-info">
+        <div class="info-row">
+          <span class="info-label">Judul:</span>
+          <span id="downloadTitle" class="info-value">Video TikTok Terbaru</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Jenis:</span>
+          <span id="downloadType" class="info-value">Video HD</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Ukuran:</span>
+          <span id="downloadSize" class="info-value">N/A</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Durasi:</span>
+          <span id="downloadDuration" class="info-value">N/A</span>
+        </div>
+      </div>
+
+      <div class="download-options">
+        <button id="optionVideo" class="download-option-btn active" onclick="selectOption('video')">
+          Video Tanpa Watermark
+        </button>
+        <button id="optionAudio" class="download-option-btn" onclick="selectOption('audio')">
+          Audio MP3
+        </button>
+      </div>
+
+      <button class="download-button" onclick="startRealDownload()">
+        ⬇️ Unduh Sekarang
+      </button>
+
+      <button class="back-btn" onclick="goBackToMain()">
+        ← Kembali ke Halaman Utama
+      </button>
+    </div>
+
+    <div class="guide-section">
+      <h2 class="guide-title">Panduan Lengkap Unduh Video TikTok</h2>
+
+      <div class="guide-card">
+        <div class="guide-step">
+          <span class="step-number">1</span>
+          <div class="step-title">Temukan TT</div>
+          <div class="guide-text">
+            Buka aplikasi TikTok di perangkat seluler Anda. Gulir untuk menemukan video yang ingin Anda simpan. Putar video untuk mengonfirmasi bahwa itu adalah video yang tepat.
+          </div>
+        </div>
+
+        <div class="guide-step">
+          <span class="step-number">2</span>
+          <div class="step-title">Salin Tautan</div>
+          <div class="guide-text">
+            Ketuk tombol Bagikan yang terletak di sisi kanan layar. Pilih "Salin tautan" dari menu. Periksa clipboard Anda untuk memastikan URL disalin dengan benar.
+          </div>
+        </div>
+
+        <div class="guide-step">
+          <span class="step-number">3</span>
+          <div class="step-title">Download Video TT</div>
+          <div class="guide-text">
+            Buka layanan download TikTok tanpa tanda air ini dan tempel tautan yang disalin ke dalam kolom teks di bagian atas. Klik 'Simpan' untuk memulai pengunduhan video.
+          </div>
+        </div>
+      </div>
+
+      <div class="guide-footer">
+        KAAXPLACE adalah salah satu alat paling populer untuk mengunduh TikTok MP4 online gratis dan hapus watermark TikTok secara instan.  
+        Tidak perlu menggunakan aplikasi tambahan — cukup gunakan browser Anda dan salin tautan untuk ditempelkan pada halaman utama.
+      </div>
+    </div>
+
+    <div class="device-guide-section">
+      <h2 class="section-title">Berikut adalah beberapa cara untuk TikTok download</h2>
+
+      <div class="device-illustration">
+        <svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+          <path d="M80,120 C60,100 40,110 40,130 C40,150 60,160 80,140 Z" class="hand" />
+          <rect x="100" y="90" width="60" height="100" rx="8" class="phone" />
+          <circle cx="130" cy="180" r="20" class="android" />
+          <text x="130" y="185" text-anchor="middle" fill="white" font-size="12" font-weight="bold">A</text>
+
+          <path d="M220,120 C240,100 260,110 260,130 C260,150 240,160 220,140 Z" class="hand" />
+          <rect x="190" y="90" width="60" height="100" rx="8" class="phone" />
+          <path d="M220,140 C225,135 230,140 220,140 Z M220,140 C215,135 210,140 220,140 Z" fill="white" />
+          <circle cx="220" cy="120" r="8" fill="white" />
+
+          <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+          </filter>
+          <g filter="url(#shadow)">
+            <rect x="100" y="90" width="60" height="100" rx="8" class="phone" />
+            <rect x="190" y="90" width="60" height="100" rx="8" class="phone" />
+          </g>
+        </svg>
+      </div>
+
+      <div class="guide-card-device">
+        <h2>Unduh Video TikTok di Ponsel Android</h2>
+        <p>Untuk download video TikTok dan foto di ponsel Android Anda, buka aplikasi TikTok dan cari video yang diinginkan.</p>
+        <p>Di halaman video, klik tombol "Bagikan" yang ada di sisi kanan layar, lalu pilih "Salin Tautan".</p>
+        <p>Buka situs web pengunduh TikTok kami dan tempelkan tautan untuk segera mengunduh.</p>
+      </div>
+
+      <div class="guide-card-device">
+        <h2>Download Video TikTok Tanpa Watermark di PC</h2>
+        <p>Metode download video TikTok ini universal dan mudah: video Anda akan disimpan tanpa watermark dalam kualitas HD. Tidak diperlukan instalasi perangkat lunak.</p>
+        <p>Cukup salin tautan video seperti yang dijelaskan sebelumnya, kunjungi situs download TikTok no watermark gratis, tempelkan tautan, dan klik "Save TikTok" untuk mulai mengunduh.</p>
+      </div>
+
+      <div class="faq-section">
+        <h3 class="faq-title">Pertanyaan Umum</h3>
+        
+        <div class="faq-item">
+          <button class="faq-toggle">
+            <span>Bagaimana cara mendapatkan tautan unduhan untuk video TikTok?</span>
+            <span>➕</span>
+          </button>
+          <div class="faq-content">
+            <p>Buka video di aplikasi TikTok → klik ikon "Bagikan" → pilih "Salin Tautan". Tempelkan tautan tersebut ke kolom di atas.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-toggle">
+            <span>Bagaimana cara download video TikTok mp4 di iPhone (iOS)?</span>
+            <span>➕</span>
+          </button>
+          <div class="faq-content">
+            <p>Sama seperti Android: salin tautan dari TikTok → tempel di KAAXPLACE → pilih opsi unduhan → klik "Unduh Sekarang".</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-toggle">
+            <span>Bisakah saya menggunakan pengunduh video TikTok di ponsel Android?</span>
+            <span>➕</span>
+          </button>
+          <div class="faq-content">
+            <p>Ya! Situs kami sepenuhnya responsif dan bekerja sempurna di browser Android (Chrome, Firefox, Samsung Internet).</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-toggle">
+            <span>Bisakah saya TikTok download no wm dalam HD?</span>
+            <span>➕</span>
+          </button>
+          <div class="faq-content">
+            <p>Ya! Kami menyediakan opsi download video tanpa watermark dalam kualitas HD hingga 1080p atau 4K (tergantung sumber video).</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-toggle">
+            <span>Cara download video TT di iPhone?</span>
+            <span>➕</span>
+          </button>
+          <div class="faq-content">
+            <p>Salin tautan dari TikTok → buka Safari → tempel di KAAXPLACE → pilih "Video Tanpa Watermark" → klik "Unduh Sekarang".</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-toggle">
+            <span>Bagaimana cara hapus watermark TikTok online?</span>
+            <span>➕</span>
+          </button>
+          <div class="faq-content">
+            <p>Gunakan KAAXPLACE — cukup tempel tautan TikTok, pilih opsi "Video Tanpa Watermark", dan unduh file bersih tanpa logo TT.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p><strong>Kontak</strong> | <strong>TikTok Viewer</strong> | <strong>Twitter video downloader</strong> | <strong>Download video Instagram</strong></p>
+      <p class="disclaimer">Kami tidak berafiliasi dengan TikTok, Douyin atau Bytedance.</p>
+      <p style="margin-top: 15px;">Bahasa Indonesia ▼</p>
+    </div>
+  </div>
+
+  <script>
+    let currentType = 'video';
+    let currentUrl = '';
+    let videoData = null; // Akan menyimpan data video, termasuk size dan durasi
+
+    // --- FUNGSI HELPER BARU ---
+
+    /**
+     * Mengubah bytes menjadi format yang mudah dibaca (KB, MB, GB).
+     */
+    function formatBytes(bytes, decimals = 2) {
+      if (!+bytes) return 'N/A';
+      const k = 1024;
+      const dm = decimals < 0 ? 0 : decimals;
+      const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+      const i = Math.floor(Math.log(bytes) / Math.log(k));
+      return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`;
+    }
+
+    /**
+     * Memformat durasi.
+     */
+    function formatDuration(duration) {
+      if (!duration) return 'N/A';
+      if (typeof duration === 'string' && duration.includes(':')) {
+        return duration;
+      }
+      const numSeconds = parseInt(duration, 10);
+      if (isNaN(numSeconds) || numSeconds === 0) return 'N/A';
+      
+      const minutes = Math.floor(numSeconds / 60);
+      const seconds = numSeconds % 60;
+      
+      return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    }
+
+    /**
+     * Mengambil ukuran file dari URL menggunakan request HEAD/Range.
+     */
+    async function fetchFileSize(url) {
+      if (!url) return 'N/A';
+      try {
+        const response = await fetch(url, { method: 'HEAD' });
+        if (response.ok) {
+           const contentLength = response.headers.get('Content-Length');
+           if (contentLength) {
+             return formatBytes(parseInt(contentLength, 10));
+           }
+        }
+        // Fallback untuk CORS/header tidak ada: coba Range: bytes=0-0
+        const getResponse = await fetch(url, { headers: { 'Range': 'bytes=0-0' } });
+        if (getResponse.ok) {
+           const contentRange = getResponse.headers.get('Content-Range');
+           if (contentRange) {
+             const size = contentRange.split('/')[1];
+             if (size && size !== '*') {
+               return formatBytes(parseInt(size, 10));
+             }
+           }
+        }
+        return 'N/A'; // Header tidak ditemukan atau gagal
+      } catch (error) {
+        return 'N/A'; // Kembali N/A jika ada error (kemungkinan CORS)
+      }
+    }
+    
+    function isValidTikTokUrl(url) {
+      if (!url) return false;
+      const tiktokPatterns = [/tiktok\.com/i, /vm\.tiktok\.com/i, /vt\.tiktok\.com/i, /www\.tiktok\.com/i, /v\.tiktok\.com/i];
+      return tiktokPatterns.some(pattern => pattern.test(url));
+    }
+
+    /**
+     * Mengambil dan memproses data dari API. Mencoba dua API secara berurutan. (OPTIMASI INI)
+     * @param {string} url - Link TikTok.
+     * @returns {Promise<object>} - Objek videoData yang sudah diproses.
+     */
+    async function fetchAndProcessData(url) {
+      let data;
+      let videoUrl, audioUrl, title, author, duration, cover;
+      
+      // --- PERCOBAAN API PERTAMA (tiklydown) ---
+      try {
+        const response = await fetch(`https://api.tiklydown.eu.org/api/download?url=${encodeURIComponent(url)}`);
+        if (!response.ok) throw new Error('API tiklydown gagal merespons');
+        data = await response.json();
+        
+        if (data && data.video) {
+          videoUrl = data.video;
+          audioUrl = data.music;
+          title = data.title;
+          author = data.author;
+          duration = data.duration;
+          cover = data.cover;
+        } else {
+          throw new Error('Data video tidak ditemukan di tiklydown');
+        }
+      } catch (error) {
+        console.warn('Gagal dengan tiklydown, mencoba fallback API...', error);
+        
+        // --- PERCOBAAN API KEDUA (tikwm) ---
+        try {
+          const response2 = await fetch(`https://www.tikwm.com/api/?url=${encodeURIComponent(url)}`);
+          if (!response2.ok) throw new Error('API tikwm gagal merespons');
+          data = await response2.json();
+          
+          if (data && data.data) {
+            videoUrl = data.data.play; 
+            audioUrl = data.data.music; 
+            title = data.data.title;
+            author = data.data.author; 
+            duration = data.data.duration; // Dlm detik
+            cover = data.data.cover;
+          } else {
+            throw new Error('Data video tidak ditemukan di tikwm');
+          }
+        } catch (error2) {
+          console.error('Semua API gagal:', error2);
+          // Fallback jika kedua API gagal
+          return {
+            title: 'Video TikTok',
+            author: 'TikTok User',
+            duration: 'N/A',
+            videoUrl: url, // Gunakan URL asli sebagai fallback (dengan watermark)
+            audioUrl: url,
+            videoSize: 'N/A',
+            size_raw: null,
+            audioSize: 'N/A'
+          };
+        }
+      }
+      
+      // Ambil ukuran file secara paralel (OPTIMASI UTAMA)
+      const [videoSize, audioSize] = await Promise.all([
+        fetchFileSize(videoUrl),
+        fetchFileSize(audioUrl)
+      ]);
+
+      return {
+        title: title || 'Video TikTok',
+        author: author || 'TikTok User',
+        duration: formatDuration(duration),
+        videoUrl: videoUrl,
+        audioUrl: audioUrl,
+        thumbnail: cover,
+        videoSize: videoSize,
+        audioSize: audioSize
+      };
+    }
+
+    // --- FUNGSI UTAMA ---
+
+    async function processLink() {
+      const url = document.getElementById('tiktokUrl').value.trim();
+      const btn = document.getElementById('processBtn');
+      const loading = document.getElementById('loading');
+      const statusMessage = document.getElementById('statusMessage');
+      
+      statusMessage.style.display = 'none';
+      statusMessage.className = 'status-message';
+      
+      if (!url) {
+        showStatus('⚠️ Mohon masukkan link TikTok.', 'error');
+        return;
+      }
+
+      if (!isValidTikTokUrl(url)) {
+        showStatus('🤔 Ini bukan link TikTok standar. Tetap lanjutkan proses...', 'success');
+      }
+
+      currentUrl = url.trim();
+      btn.disabled = true;
+      btn.textContent = "⏳ Memproses...";
+      loading.style.display = 'block';
+      
+      try {
+        // Panggil fungsi yang menangani pengambilan data dan size
+        videoData = await fetchAndProcessData(currentUrl); 
+        
+        // Periksa apakah videoUrl adalah URL asli (fallback)
+        if (videoData.videoUrl === currentUrl) {
+            showStatus('⚠️ Gagal mendapatkan tautan tanpa watermark. Silakan coba lagi atau unduh versi asli.', 'error');
+        } else {
+            showStatus('✅ Video TikTok berhasil diproses! Pilih opsi di bawah ini.', 'success');
+        }
+        
+      } catch (error) {
+        console.error('Proses Link Error:', error);
+        showStatus('❌ Terjadi kesalahan tak terduga saat memproses link.', 'error');
+        
+        // Fallback data jika terjadi error fatal
+        videoData = {
+            title: 'Video TikTok',
+            author: 'TikTok User',
+            duration: 'N/A',
+            videoUrl: currentUrl, 
+            audioUrl: currentUrl,
+            videoSize: 'N/A', 
+            audioSize: 'N/A'
+          };
+      } finally {
+        updateDownloadInfo(videoData);
+        showDownloadPage();
+        loading.style.display = 'none';
+        btn.disabled = false;
+        btn.textContent = "📥 Download Video Sekarang";
+      }
+    }
+
+
+    /**
+     * Memperbarui info di halaman download.
+     */
+    function updateDownloadInfo(data) {
+      if (!data) return;
+      document.getElementById('downloadTitle').textContent = data.title || 'Video TikTok Terbaru';
+      
+      // Update info berdasarkan opsi saat ini
+      selectOption(currentType); 
+      
+      document.getElementById('downloadDuration').textContent = data.duration || 'N/A';
+    }
+
+    function showStatus(message, type) {
+      const statusMessage = document.getElementById('statusMessage');
+      statusMessage.textContent = message;
+      statusMessage.className = `status-message status-${type}`;
+      statusMessage.style.display = 'block';
+    }
+
+    function showDownloadPage() {
+      document.getElementById('downloadPage').style.display = 'block';
+      document.getElementById('downloadPage').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    /**
+     * Mengganti pilihan antara Video dan Audio.
+     */
+    function selectOption(type) {
+      currentType = type;
+      
+      document.getElementById('optionVideo').classList.toggle('active', type === 'video');
+      document.getElementById('optionAudio').classList.toggle('active', type === 'audio');
+      
+      if (videoData) {
+        if (type === 'video') {
+          document.getElementById('downloadType').textContent = "Video HD (Tanpa Watermark)";
+          document.getElementById('downloadSize').textContent = videoData.videoSize || 'N/A';
+        } else {
+          document.getElementById('downloadType').textContent = "Audio MP3";
+          document.getElementById('downloadSize').textContent = videoData.audioSize || 'N/A';
+        }
+      } else {
+          document.getElementById('downloadType').textContent = type === 'video' ? "Video HD (Tanpa Watermark)" : "Audio MP3";
+          document.getElementById('downloadSize').textContent = 'N/A';
+      }
+    }
+
+    function startRealDownload() {
+      if (!videoData) {
+        showStatus('❌ Data video tidak valid. Silakan proses ulang link.', 'error');
+        return;
+      }
+
+      const downloadBtn = document.querySelector('.download-button');
+      const originalText = downloadBtn.textContent;
+      
+      try {
+        downloadBtn.textContent = "⏳ Mengunduh...";
+        downloadBtn.disabled = true;
+
+        const downloadUrl = currentType === 'video' ? videoData.videoUrl : videoData.audioUrl;
+        
+        if (!downloadUrl || downloadUrl === currentUrl) {
+          // Jika URL adalah URL asli (kemungkinan watermark)
+          window.open(currentUrl, '_blank');
+          showStatus('🔗 Membuka link TikTok di tab baru... (Kemungkinan ada watermark)', 'success');
+        } else {
+          const a = document.createElement('a');
+          a.href = downloadUrl;
+          a.download = currentType === 'video' ? 'tiktok_video.mp4' : 'tiktok_audio.mp3';
+          a.target = '_blank';
+          
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          
+          showStatus(`✅ Download ${currentType === 'audio' ? 'audio' : 'video'} berhasil!`, 'success');
+        }
+        
+      } catch (error) {
+        console.error('Download error:', error);
+        window.open(currentUrl, '_blank');
+        showStatus('🔗 Membuka link TikTok di tab baru...', 'success');
+      } finally {
+        downloadBtn.textContent = originalText;
+        downloadBtn.disabled = false;
+      }
+    }
+
+    function goBackToMain() {
+      document.getElementById('downloadPage').style.display = 'none';
+      document.getElementById('tiktokUrl').value = '';
+      document.getElementById('tiktokUrl').focus();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // FAQ Toggle
+    document.querySelectorAll('.faq-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        const icon = button.querySelector('span:last-child');
+
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+          icon.textContent = '➕';
+        } else {
+          document.querySelectorAll('.faq-content').forEach(c => {
+            c.style.maxHeight = null;
+          });
+          document.querySelectorAll('.faq-toggle span:last-child').forEach(i => {
+            i.textContent = '➕';
+          });
+
+          content.style.maxHeight = content.scrollHeight + 'px';
+          icon.textContent = '➖';
+        }
+      });
+    });
+    
+    // Auto-focus on URL input
+    document.getElementById('tiktokUrl').focus();
+
+    // Enter key support
+    document.getElementById('tiktokUrl').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        processLink();
+      }
+    });
+
+    // Auto-paste from clipboard
+    document.getElementById('tiktokUrl').addEventListener('click', async function() {
+      try {
+        const text = await navigator.clipboard.readText();
+        if (isValidTikTokUrl(text)) {
+          this.value = text;
+          showStatus('📋 Link berhasil ditempel dari clipboard!', 'success');
+        }
+      } catch (error) {
+        // Ignore clipboard errors
+      }
+    });
+  </script>
+</body>
+</html>
